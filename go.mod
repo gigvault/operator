@@ -1,6 +1,6 @@
 module github.com/gigvault/operator
 
-go 1.24.0
+go 1.23
 
 require (
 	github.com/gigvault/shared v1.0.0
@@ -67,4 +67,5 @@ require (
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
 
-replace github.com/gigvault/shared => ../shared
+// Uncomment for local development:
+// replace github.com/gigvault/shared => ../shared

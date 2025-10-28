@@ -3,7 +3,7 @@ module github.com/gigvault/operator
 go 1.23
 
 require (
-	github.com/gigvault/shared v1.0.0
+	github.com/gigvault/shared v1.1.0
 	go.uber.org/zap v1.26.0
 	k8s.io/apimachinery v0.29.0
 	k8s.io/client-go v0.29.0

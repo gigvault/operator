@@ -24,9 +24,6 @@ RUN apk --no-cache add ca-certificates
 # Copy binary from builder
 COPY --from=builder /app/operator /usr/local/bin/operator
 
-# Copy config if exists
-COPY config/ /config/ 2>/dev/null || true
-
 # Expose ports
 EXPOSE 8080 9090
 

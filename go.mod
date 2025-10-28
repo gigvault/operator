@@ -3,7 +3,7 @@ module github.com/gigvault/operator
 go 1.23
 
 require (
-	github.com/gigvault/shared v0.0.0
+	github.com/gigvault/shared v1.0.0
 	go.uber.org/zap v1.26.0
 	k8s.io/apimachinery v0.29.0
 	k8s.io/client-go v0.29.0
@@ -66,5 +66,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
-
-replace github.com/gigvault/shared => ../shared

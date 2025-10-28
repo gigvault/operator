@@ -13,8 +13,7 @@ import (
 )
 
 var (
-	scheme   = runtime.NewScheme()
-	setupLog = ctrl.Log.WithName("setup")
+	scheme = runtime.NewScheme()
 )
 
 func init() {
@@ -35,7 +34,12 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Failed to initialize logger: %v\n", err)
 		os.Exit(1)
 	}
-	defer logger.Sync()
+	defer func() {
+		if err := logger.Sync(); err != nil {
+			// Ignore sync errors on stderr/stdout
+			_ = err
+		}
+	}()
 
 	logger.Info("Starting GigVault Operator",
 		zap.String("metrics-addr", metricsAddr),
